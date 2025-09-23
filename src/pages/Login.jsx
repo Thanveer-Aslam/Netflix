@@ -50,7 +50,7 @@ const Login = () => {
                   placeholder="password"
                   autoComplete="current-password"
                 />
-                <button className="bg-red-700 py-3 my-6 rounded font-bold">
+                <button className="bg-red-700 py-3 my-6 rounded font-bold cursor-pointer">
                   Sign In
                 </button>
                 <div className="flex justify-between items-center text-sm  text-gray-500">
