@@ -1,7 +1,7 @@
 import axios from "axios";
 import Movie from "../components/Movie";
 import { useState, useEffect, useRef } from "react";
-import Slider from "./slider";
+import Slider from "./Slider";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const Rows = ({ title, fetchURL }) => {

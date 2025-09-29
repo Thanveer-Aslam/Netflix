@@ -3,7 +3,7 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { UserAuth } from '../context/AuthContext'
 import { db } from '../../firebase'
 import { updateDoc, doc, onSnapshot } from 'firebase/firestore'
-import Slider from "./slider";
+import Slider from "./Slider";
 import { AiOutlineClose } from "react-icons/ai";
 
 const SavedShows = () => {
