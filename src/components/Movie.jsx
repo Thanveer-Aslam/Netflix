@@ -1,16 +1,15 @@
-import {useState} from 'react'
+import { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { UserAuth } from '../context/AuthContext';
-import { db } from '../../firebase';
-import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
+import { UserAuth } from "../context/AuthContext";
+import { db } from "../../firebase";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 
-
-const Movie = ({item}) => {
-  const [like, setLike] = useState(false)
-  const [saved, setSaved] = useState(false)
+const Movie = ({ item }) => {
+  const [like, setLike] = useState(false);
+  const [saved, setSaved] = useState(false);
   const { user } = UserAuth();
 
-  const movieID = doc(db, 'users', `${user?.email}`)
+  const movieID = doc(db, "users", `${user?.email}`);
 
   const saveShow = async () => {
     if (user?.email) {
@@ -20,14 +19,14 @@ const Movie = ({item}) => {
         savedShows: arrayUnion({
           id: item.id,
           title: item.title,
-          img: item.backdrop_path
-        })
-      })
+          img: item.backdrop_path,
+        }),
+      });
       console.log("Saving movie:", item);
     } else {
-      alert('login to save movie')
+      alert("login to save movie");
     }
-  }
+  };
 
   return (
     <>
@@ -55,6 +54,6 @@ const Movie = ({item}) => {
       </div>
     </>
   );
-}
+};
 
 export default Movie;
